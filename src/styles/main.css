@@ -21,6 +21,24 @@ body {
 }
 #nav ul a {
   font-size: 1.2rem;
+  position: relative;
+}
+#nav ul a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  width: 0;
+  height: 8px;
+  background-color: #747fe0;
+  transition: width 0.15s;
+}
+#nav ul a:hover {
+  color: #7795f8;
+}
+#nav ul a:hover::after {
+  width: 100%;
 }
 
 #introduction h1 {
