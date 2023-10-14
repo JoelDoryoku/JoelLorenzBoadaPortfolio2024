@@ -1,0 +1,14 @@
+---
+const { inputStatement, returnStatement = null } = Astro.props;
+---
+
+<section class={returnStatement ? "statement" : "statement last-statement"}>
+    <p class="input-statement">{inputStatement}</p>
+    {
+        // If returnStatement isn't null, print the output after &&
+        returnStatement && 
+        <p class="return-statement">
+            <slot />
+        </p>
+    }
+</section>

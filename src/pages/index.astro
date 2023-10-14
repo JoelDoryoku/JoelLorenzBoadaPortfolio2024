@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import TerminalStatement from "../components/TerminalStatement.astro";
+import { getCollection } from 'astro:content';
+const terminalStatements = await getCollection('terminal');
 ---
 
 <BaseLayout>
@@ -21,34 +24,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
 
             <div class="terminal-window">
-                <section class="statement">
-                    <p class="input-statement">Joel.currentLocation</p>
-                    <p class="return-statement">"Catalonia, Spain"</p>
-                </section>
+                <TerminalStatement inputStatement="Joel.contactInfo" returnStatement={true}>
+                    ["<a href="mailto:joel.lorenz2000@gmail.com">joel.lorenz2000@gmail.com</a>", "<a href="https://www.linkedin.com/in/joellorenzboada/" target="_blank">LinkedIn</a>", "<a href="https://github.com/JoelDoryoku" target="_blank">GitHub</a>"]
+                </TerminalStatement>
 
-                <section class="statement">
-                    <p class="input-statement">Joel.contactInfo</p>
-                    <p class="return-statement">["<a href="mailto:joel.lorenz2000@gmail.com">joel.lorenz2000@gmail.com</a>", "<a href="https://www.linkedin.com/in/joellorenzboada/" target="_blank">LinkedIn</a>", "<a href="https://github.com/JoelDoryoku" target="_blank">GitHub</a>"]</p>
-                </section>
+                {terminalStatements.map((terminalStatement, i) => (
+                    <TerminalStatement inputStatement={terminalStatement.data.input} returnStatement={true}>
+                        {terminalStatement.data.return}
+                    </TerminalStatement>
+                ))}
 
-                <section class="statement">
-                    <p class="input-statement">Joel.interests</p>
-                    <p class="return-statement">["Calisthenics", "Videogames", "Ethical Hacking", "Cars"]</p>
-                </section>
-
-                <section class="statement">
-                    <p class="input-statement">Joel.education</p>
-                    <p class="return-statement">"Web Applications Development Technician, Spain"</p>
-                </section>
-
-                <section class="statement">
-                    <p class="input-statement">Joel.skills</p>
-                    <p class="return-statement">["HTML5", "CSS3", "JavaScript", "SCSS", "PHP", "Astro.build", "Svelte", "Git", "Docker"]</p>
-                </section>
-
-                <section class="statement last-statement">
-                    <p class="input-statement"></p>
-                </section>
+                <TerminalStatement inputStatement="" />
             </div>
         </section>
     </section>
