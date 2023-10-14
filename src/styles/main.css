@@ -1,0 +1,108 @@
+@charset "UTF-8";
+@keyframes caret {
+  50% {
+    background-color: transparent;
+  }
+}
+body {
+  background-color: #f6f9fc;
+  color: rgb(90, 93, 122);
+  font-family: Camphor, "Open Sans", "Segoe UI", sans-serif;
+  margin: 0 auto;
+  max-width: 64rem;
+}
+
+#nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  justify-items: center;
+  margin: 3rem 0 20dvh 0;
+  position: sticky;
+}
+#nav ul a {
+  font-size: 1.2rem;
+}
+
+#introduction h1 {
+  color: #747fe0;
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  font-size: 4.5rem;
+}
+#introduction h1::before {
+  content: "> ";
+}
+#introduction p {
+  font-size: 1.3rem;
+  font-weight: 200;
+  margin: 5rem 0;
+}
+#introduction p a {
+  color: #747fe0;
+  font-weight: 700;
+  transition: 0.1s ease-in-out;
+}
+#introduction p a:hover {
+  opacity: 0.8;
+}
+
+#terminal .terminal-header {
+  align-items: center;
+  background-color: #e4e3e5;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  height: 28px;
+  justify-content: flex-start;
+}
+#terminal .terminal-header .header-button {
+  border-radius: 50%;
+  height: 12px;
+  margin-left: 9px;
+  width: 12px;
+}
+#terminal .terminal-header .header-button.red {
+  background-color: #f96256;
+  border: 1px solid #f65549;
+}
+#terminal .terminal-header .header-button.yellow {
+  background-color: #fdbc3d;
+  border: 1px solid #ffb524;
+}
+#terminal .terminal-header .header-button.green {
+  background-color: #33c948;
+  border: 1px solid #2dbb41;
+}
+#terminal .terminal-window {
+  background-color: #5a5d7a;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 50px 100px rgba(50, 50, 93, 0.15), 0 15px 35px rgba(50, 50, 93, 0.2), 0 5px 15px rgba(0, 0, 0, 0.12);
+  font-family: Monaco, Consolas, Lucida Console, monospace;
+  padding: 2.2rem 0;
+}
+#terminal .terminal-window .statement {
+  margin: 0 35px 25px 35px;
+  line-height: 24px;
+}
+#terminal .terminal-window .statement.last-statement {
+  margin-bottom: 0px;
+}
+#terminal .terminal-window .statement .input-statement {
+  color: #f7f7f7;
+}
+#terminal .terminal-window .statement .input-statement::before {
+  content: "> ";
+}
+#terminal .terminal-window .statement .return-statement {
+  color: #e7d184;
+}
+#terminal .terminal-window .statement .return-statement a {
+  color: #35feff;
+  transition: 0.1s ease-in-out;
+}
+#terminal .terminal-window .statement .return-statement a:hover {
+  opacity: 0.8;
+}
+
+.caret {
+  animation: caret 1s steps(1) infinite;
+  background-color: rgba(116, 127, 224, 0.65);
+}/*# sourceMappingURL=main.css.map */
