@@ -2,13 +2,11 @@
 const { inputStatement, returnStatement = null } = Astro.props;
 ---
 
-<section class={returnStatement ? "statement" : "statement last-statement"}>
+<article class={returnStatement ? "statement" : "statement last-statement"}>
     <p class="input-statement">{inputStatement}</p>
     {
         // If returnStatement isn't null, print the output after &&
         returnStatement && 
-        <p class="return-statement">
-            <slot />
-        </p>
+        <p class="return-statement" set:html={returnStatement}></p>
     }
-</section>
+</article>

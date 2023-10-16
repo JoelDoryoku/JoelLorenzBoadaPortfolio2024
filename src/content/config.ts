@@ -5,7 +5,7 @@ const terminal = defineCollection({
     type: 'content', // v2.5.0 and later
     schema: z.object({
         input: z.string(),
-        return: z.string()
+        return: z.any()
     })
 });
 
