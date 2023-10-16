@@ -1,0 +1,30 @@
+---
+import TerminalStatement from "../components/TerminalStatement.astro";
+import { getCollection } from 'astro:content';
+const terminalStatements = await getCollection('terminal');
+---
+
+<section id="presentation">
+    <section id="introduction">
+        <h1>Joel Lorenz Boada<span class="caret">&nbsp;</span></h1>
+        <p>
+            I am a Full-Stack Web Developer. My passion is building simple, beautiful user experiences. 
+            <br>
+            Check out my <a href="#projects">side-projects</a> below.
+        </p>
+    </section>
+
+    <section id="terminal">
+        <div class="terminal-header">
+            <div class="header-button red"></div>
+            <div class="header-button yellow"></div>
+            <div class="header-button green"></div>
+        </div>
+
+        <div class="terminal-window">
+            {terminalStatements.map((terminalStatement, i) => (
+                <TerminalStatement inputStatement={terminalStatement.data.input} returnStatement={terminalStatement.data.return} />
+            ))}
+        </div>
+    </section>
+</section>

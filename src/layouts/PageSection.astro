@@ -1,0 +1,8 @@
+---
+const { id, name } = Astro.props;
+---
+
+<section id={id}>
+    <h2 class="section-title">{name}</h2>
+    <slot />
+</section>

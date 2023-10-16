@@ -3,7 +3,7 @@ const { inputStatement, returnStatement = null } = Astro.props;
 ---
 
 <article class={returnStatement ? "statement" : "statement last-statement"}>
-    <p class="input-statement">{inputStatement}</p>
+    <p class="input-statement" set:html={inputStatement}></p>
     {
         // If returnStatement isn't null, print the output after &&
         returnStatement && 
