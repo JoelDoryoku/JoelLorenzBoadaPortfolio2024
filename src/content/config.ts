@@ -10,6 +10,20 @@ const terminal = defineCollection({
     })
 });
 
+const projects = defineCollection({
+    type: 'content', // v2.5.0 and later
+    schema: z.object({
+        date: z.date(),
+        title: z.string(),
+        desc: z.string(),
+        skills: z.array(z.string()),
+        demoLink: z.string(),
+        sourceLink: z.string(),
+        image: z.string()
+    })
+});
+
 export const collections = {
     'terminal': terminal,
+    'projects': projects
   };
