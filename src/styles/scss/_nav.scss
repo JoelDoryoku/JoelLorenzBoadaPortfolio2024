@@ -1,9 +1,8 @@
 #nav ul {
     display: flex;
-    justify-content: space-evenly;
-    justify-items: center;
+    justify-content: right;
+    gap: 5rem;
     margin: 3rem 0 20dvh 0;
-    position: sticky;
 
     a {
         font-size: 1.2rem;
