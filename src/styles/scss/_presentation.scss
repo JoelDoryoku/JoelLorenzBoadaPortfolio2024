@@ -1,6 +1,10 @@
+html.dark-theme #terminal {
+    filter: brightness(.8) contrast(1.2);
+}
+
 #introduction {
     h1 {
-        color: $primary-color;
+        color: var(--primary-color);
         font-family: Monaco, Consolas, 'Lucida Console', monospace;
         font-size: clamp(2.3rem, 8vw - 2rem, 4.5rem);
 
@@ -15,7 +19,7 @@
         margin: 5rem 0;
 
         a {
-            color: $primary-color;
+            color: var(--primary-color);
             font-weight: 700;
             transition: .1s ease-in-out;
 
@@ -102,7 +106,7 @@
 
 .caret {
     animation: caret 1s steps(1) infinite;
-    background-color: $caret-color;
+    background-color: var(--caret-color);
 }
 
 .terminal-caret {

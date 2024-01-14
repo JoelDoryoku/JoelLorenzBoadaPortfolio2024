@@ -1,0 +1,63 @@
+
+
+<mode-toggle class="flex">
+    <button
+        class="justify-self-end bg-black dark:bg-white ml-4 inline-flex h-6 w-11 items-center rounded-full"
+        id="mode-toggle"
+        role="switch"
+        type="button"
+        tabindex="0"
+        aria-checked="false"
+        data-headlessui-state=""
+        >
+            <span class="sr-only">Toggle dark mode</span>
+            <span id="mode-circle" class="inline-block h-4 w-4 rounded-full bg-gradient-to-tr translate-x-[.25rem] bg-[#ffde69] transition duration-300">
+                <span  class="absolute top-0 right-0 w-[10px] h-[10px] rounded-full bg-gray-700 scale-[0]"></span>
+            </span>
+    </button>
+</mode-toggle>
+
+<script is:inline>
+    // Select the button
+    const btn = document.getElementById("mode-toggle");
+    // Select the theme preference from localStorage
+    const currentTheme = localStorage.getItem("theme");
+    const btnCircle = document.getElementById('mode-circle');
+
+    // If the current theme in localStorage is "dark"...
+    if (currentTheme == "dark") {
+        // ...then use the .dark-theme class
+        document.documentElement.classList.add("dark-theme");
+        btnCircle?.classList.add('dark');
+        btn?.classList.add('bg-dark-btn');
+    }
+
+    // Listen for a click on the button 
+    btn?.addEventListener("mouseup", function() {
+        // Toggle the .dark-theme class on each click
+        document.documentElement.classList.toggle("dark-theme");
+        btnCircle?.classList.toggle('dark');
+        btn.classList.toggle('bg-dark-btn');
+        
+        // Let's say the theme is equal to light
+        let theme = "light";
+        // If the body contains the .dark-theme class...
+        if (document.documentElement.classList.contains("dark-theme")) {
+            // ...then let's make the theme dark
+            theme = "dark";
+        }
+        // Then save the choice in localStorage
+        localStorage.setItem("theme", theme);
+    });
+</script>
+
+<style>
+    .dark {
+      transform: translateX(1.5rem) !important;
+      background-color: #3b82f6 !important;
+    }
+
+    .bg-dark-btn {
+        background-color: #eee !important;
+    }
+</style>

@@ -16,12 +16,12 @@
             bottom: -30px;
             width: 0;
             height: 8px;
-            background-color: #747fe0;
+            background-color: var(--primary-color);
             transition: width .15s;
         }
 
         &:hover {
-            color: #7795f8;
+            color: var(--primary-hover-color);
 
             &::after {
                 width: 100%;

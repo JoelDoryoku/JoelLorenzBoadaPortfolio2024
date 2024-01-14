@@ -1,12 +1,26 @@
+// General declarative (dynamic) variables
+:root {
+    --global-bg-color: #f6f9fc;
+    --primary-color: #747fe0;
+    --primary-hover-color: #7795f8;
+    --secondary-color: #525f7f;
+    --secondary-text-color: #525f7f;
+    --text-color: rgb(90, 93, 122);
+    --caret-color: rgba(116,127,224,.65);
+}
+
+html.dark-theme {
+    --global-bg-color: #1b1b1b;
+    --primary-color: #e7d184;
+    --primary-hover-color: #e7d184;
+    --secondary-color: #e7d184;
+    --secondary-text-color: #1b1b1b;
+    --text-color: #f6f9fc;
+    --caret-color: #e7d184;
+}
+
+// General imperative (static) variables
 // Colors
-// Colors - General
-$body-bg-color: #f6f9fc;
-$primary-color: #747fe0;
-$text-color: rgb(90, 93, 122);
-
-// Colors - Introduction
-$caret-color: rgba(116,127,224,.65);
-
 // Colors - Terminal
 // Colors - Terminal - Header
 $terminal-header-bg-color: #e4e3e5;

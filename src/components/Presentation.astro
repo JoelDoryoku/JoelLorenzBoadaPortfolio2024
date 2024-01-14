@@ -16,7 +16,7 @@ terminalStatements.sort((a, b) => {
 
 <section id="presentation">
     <section id="introduction">
-        <h1>Joel Lorenz Boada<span class="caret">&nbsp;</span></h1>
+        <h1><span class="name">Joel Lorenz Boada</span><span class="caret">&nbsp;</span></h1>
         <p>
             I am a Full-Stack Web Developer. My passion is building simple, beautiful user experiences. 
             <br>
@@ -38,3 +38,21 @@ terminalStatements.sort((a, b) => {
         </div>
     </section>
 </section>
+
+<script>
+    const personsNameField = document.querySelector('#introduction .name');
+    const personsNameArray = personsNameField!.innerHTML.split('');
+    let iterator = 0;
+
+    // Limpiamos el span para proceder a la "animacion" de typewriting.
+    personsNameField!.innerHTML = '';
+
+    let intervalId = setInterval(() => {
+        if (iterator > 15) {
+            clearInterval(intervalId);
+        }
+
+        personsNameField!.innerHTML += personsNameArray[iterator];
+        iterator++;
+    }, 100);
+</script>

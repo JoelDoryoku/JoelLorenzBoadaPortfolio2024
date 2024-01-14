@@ -1,10 +1,22 @@
-html {
+:root {
     scroll-behavior: smooth;
+    background-color: var(--global-bg-color);
+}
+
+html, body, h1, h2, h3, p, div, section, article {
+    transition: .3s;
+}
+
+html.dark-theme #scroll-top {
+    background-color: #fff;
+}
+
+html.dark-theme #scroll-top svg {
+    fill: black;
 }
 
 body {
-    background-color: $body-bg-color;
-    color: $text-color;
+    color: var(--text-color);
     font-family: Camphor, 'Open Sans', 'Segoe UI', sans-serif;
     margin: 0 auto;
     max-width: 65rem;
