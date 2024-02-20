@@ -40,6 +40,7 @@ terminalStatements.sort((a, b) => {
 </section>
 
 <script>
+    // Obtenemos los valores del texto a hacer el typewritting.
     const personsNameField = document.querySelector('#introduction .name');
     const personsNameArray = personsNameField!.innerHTML.split('');
     let iterator = 0;
@@ -47,12 +48,16 @@ terminalStatements.sort((a, b) => {
     // Limpiamos el span para proceder a la "animacion" de typewriting.
     personsNameField!.innerHTML = '';
 
-    let intervalId = setInterval(() => {
-        if (iterator > 15) {
-            clearInterval(intervalId);
-        }
+    setTimeout(() => {
+        // Iteramos 15 veces para hacer la animación de typewritting.
+        let intervalId = setInterval(() => {
+            if (iterator > personsNameArray.length - 2) {
+                clearInterval(intervalId);
+            }
+            console.log(iterator);
 
-        personsNameField!.innerHTML += personsNameArray[iterator];
-        iterator++;
-    }, 100);
+            personsNameField!.innerHTML += personsNameArray[iterator];
+            iterator++;
+        }, 100);
+    }, 750);
 </script>

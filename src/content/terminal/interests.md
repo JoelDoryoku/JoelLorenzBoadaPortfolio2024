@@ -1,5 +1,5 @@
 ---
 order: 3
 input: Joel.interests
-return: '["Calisthenics", "Videogames", "SEO", "Ethical Hacking", "Cars"]'
+return: '["Calisthenics", "Videogames", "Self-improvement", "Cars"]'
 ---
