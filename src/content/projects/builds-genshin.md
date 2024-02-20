@@ -5,6 +5,6 @@ desc: 'Builds Genshin is a project to put into practice my knowledge of Astro.bu
 This website is about character guides for a game I used to play, which is Genshin Imapct.'
 skills: ['Astro.build', 'HTML5', 'Tailwind CSS', 'TypeScript', 'Markdown']
 demoLink: 'https://buildsgenshin.com/'
-sourceLink: ''
+sourceLink: 'https://github.com/JoelDoryoku/Builds-Genshin'
 image: /images/projects/builds-genshin.png
 ---
